@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,10 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CoreModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
