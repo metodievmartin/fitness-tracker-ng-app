@@ -5,17 +5,40 @@ import { TrainingRoutingModule } from './training-routing.module';
 import { CurrentTrainingComponent } from './components/current-training/current-training.component';
 import { NewTrainingComponent } from './components/new-training/new-training.component';
 import { PastTrainingsComponent } from './components/past-trainings/past-trainings.component';
+import { TrainingMainPageComponent } from './components/training-main-page/training-main-page.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
+import { StopTrainingComponent } from './components/stop-training/stop-training.component';
 
 
 @NgModule({
   declarations: [
     CurrentTrainingComponent,
     NewTrainingComponent,
-    PastTrainingsComponent
+    PastTrainingsComponent,
+    TrainingMainPageComponent,
+    StopTrainingComponent,
   ],
   imports: [
     CommonModule,
-    TrainingRoutingModule
-  ]
+    TrainingRoutingModule,
+    MatTabsModule,
+    MatCardModule,
+    FlexLayoutModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatProgressSpinnerModule,
+    MatDialogModule
+  ],
+  entryComponents: [StopTrainingComponent]
 })
 export class TrainingModule { }
