@@ -1,0 +1,13 @@
+.signup-form {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+mat-form-field {
+  max-width: 300px;
+  width: 100%;
+}
+
+button {
+  margin: 1rem 0;
+}
