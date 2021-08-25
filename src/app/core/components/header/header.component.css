@@ -5,6 +5,7 @@ a {
 
 a:hover,
 a:active {
+  cursor: pointer;
   color: lightgray;
 }
 
