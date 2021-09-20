@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ng-fitness-tracker-c7367": {
+      "hosting": {
+        "fitness-tracker-angular-app": [
+          "ng-fitness-tracker-c7367"
+        ]
+      }
+    }
+  }
+}
