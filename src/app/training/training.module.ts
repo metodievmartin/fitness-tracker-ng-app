@@ -17,6 +17,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { StopTrainingComponent } from './components/stop-training/stop-training.component';
 import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -39,7 +43,11 @@ import { FormsModule } from '@angular/forms';
     MatOptionModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    FormsModule
+    MatTableModule,
+    FormsModule,
+    MatSortModule,
+    MatInputModule,
+    MatPaginatorModule
   ],
   entryComponents: [StopTrainingComponent]
 })

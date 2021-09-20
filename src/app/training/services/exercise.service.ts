@@ -59,4 +59,8 @@ export class ExerciseService {
   getCurrentExercise() {
     return { ...this.currentExercise };
   }
+
+  getPastExercises() {
+    return this.exercises.slice();
+  }
 }

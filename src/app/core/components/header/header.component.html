@@ -6,11 +6,17 @@
   </div>
   <div><a routerLink="/">LOGO</a></div>
   <div fxHide.xs fxFlex fxLayout fxLayoutAlign="flex-end">
+<!--    <ul fxLayout fxLayoutGap="10px" class="navigation-items">-->
+<!--      <li *ngIf="!isAuth"><a routerLink="/auth/login">Login</a></li>-->
+<!--      <li *ngIf="!isAuth"><a routerLink="/auth/signup">Signup</a></li>-->
+<!--      <li *ngIf="isAuth"><a routerLink="/training">Training</a></li>-->
+<!--      <li *ngIf="isAuth"><a (click)="onLogout()">Logout</a></li>-->
+<!--    </ul>-->
     <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-      <li *ngIf="!isAuth"><a routerLink="/auth/login">Login</a></li>
-      <li *ngIf="!isAuth"><a routerLink="/auth/signup">Signup</a></li>
-      <li *ngIf="isAuth"><a routerLink="/training">Training</a></li>
-      <li *ngIf="isAuth"><a (click)="onLogout()">Logout</a></li>
+      <li ><a routerLink="/auth/login">Login</a></li>
+      <li ><a routerLink="/auth/signup">Signup</a></li>
+      <li ><a routerLink="/training">Training</a></li>
+      <li ><a (click)="onLogout()">Logout</a></li>
     </ul>
   </div>
 </mat-toolbar>
