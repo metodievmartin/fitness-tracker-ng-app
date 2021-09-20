@@ -8,6 +8,10 @@ import { MaterialModule } from './material';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CoreModule } from './core/core.module';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,9 @@ import { CoreModule } from './core/core.module';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
