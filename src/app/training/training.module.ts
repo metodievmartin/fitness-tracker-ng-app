@@ -16,6 +16,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { StopTrainingComponent } from './components/stop-training/stop-training.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { StopTrainingComponent } from './components/stop-training/stop-training.
     MatSelectModule,
     MatOptionModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ],
   entryComponents: [StopTrainingComponent]
 })

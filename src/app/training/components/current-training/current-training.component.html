@@ -1,6 +1,12 @@
 <section fxLayout="column" fxLayoutAlign="center center" class="container">
-  <mat-progress-spinner mode="determinate" [value]="progress"></mat-progress-spinner>
-  <h1>Progress {{progress}}%</h1>
-  <p>Keep on going, you can do it!</p>
-  <button mat-raised-button color="accent" (click)="onStop()">Stop</button>
+
+  <app-new-training *ngIf="!currentExercise"></app-new-training>
+
+  <ng-container *ngIf="currentExercise">
+    <h1>{{ currentExercise.name }}</h1>
+    <mat-progress-spinner mode="determinate" [value]="progress"></mat-progress-spinner>
+    <h1>Progress {{ progress }}%</h1>
+    <p>Keep on going, you can do it!</p>
+    <button mat-raised-button color="accent" (click)="onStop()">Stop</button>
+  </ng-container>
 </section>
