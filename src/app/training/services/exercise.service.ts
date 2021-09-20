@@ -14,6 +14,7 @@ export class ExerciseService {
     { id: 'burpees', name: 'Burpees', duration: 60, calories: 8 }
   ];
   private currentExercise: IExercise | null = null;
+  private exercises: IExercise[] = [];
 
   constructor() { }
 
@@ -27,6 +28,32 @@ export class ExerciseService {
       this.currentExercise = selectedExercise;
       this.exerciseChanged.next({ ...this.currentExercise });
     }
+  }
+
+  completeExercise() {
+    if (this.currentExercise) {
+      this.exercises.push({
+        ...this.currentExercise,
+        date: new Date(),
+        state: 'completed'
+      });
+    }
+    this.currentExercise = null;
+    this.exerciseChanged.next(null);
+  }
+
+  cancelExercise(progress: number) {
+    if (this.currentExercise) {
+      this.exercises.push({
+        ...this.currentExercise,
+        duration: this.currentExercise.duration * (progress / 100),
+        calories: this.currentExercise.calories * (progress / 100),
+        date: new Date(),
+        state: 'cancelled'
+      });
+    }
+    this.currentExercise = null;
+    this.exerciseChanged.next(null);
   }
 
   getCurrentExercise() {

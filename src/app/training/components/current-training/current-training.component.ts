@@ -12,7 +12,6 @@ import { IExercise } from '../../interfaces';
 })
 export class CurrentTrainingComponent implements OnInit, OnDestroy {
   currentExercise: IExercise | null = null;
-  @Output() trainingExit = new EventEmitter<void>();
   progress = 0;
   interval: number | undefined;
   exerciseSubscription: Subscription | undefined;
@@ -26,7 +25,12 @@ export class CurrentTrainingComponent implements OnInit, OnDestroy {
     this.exerciseSubscription = this.exerciseService.exerciseChanged.subscribe(exercise => {
       this.currentExercise = exercise;
       console.log('current exercise', this.currentExercise);
-      this.startOrResumeTimer();
+      if (exercise !== null) {
+        this.startOrResumeTimer();
+      } else {
+        clearInterval(this.interval!);
+      }
+
     });
   }
 
@@ -36,6 +40,8 @@ export class CurrentTrainingComponent implements OnInit, OnDestroy {
     this.interval = setInterval(() => {
       this.progress += 5;
       if (this.progress >= 100) {
+        this.exerciseService.completeExercise();
+        this.progress = 0;
         clearInterval(this.interval!)
       }
     }, step);
@@ -52,7 +58,8 @@ export class CurrentTrainingComponent implements OnInit, OnDestroy {
 
     matDialogRef.afterClosed().subscribe(res => {
       if (res === true) {
-        this.trainingExit.emit();
+        this.exerciseService.cancelExercise(this.progress);
+        this.progress = 0;
       } else {
         this.startOrResumeTimer();
       }
