@@ -7,6 +7,8 @@ import { LoginComponent } from './components/login/login.component';
 import { MaterialModule } from '../material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { FormsModule } from '@angular/forms';
     AuthRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ]
 })
 export class AuthModule { }
